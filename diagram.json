@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "author": "Projeto Academico IoT",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 0, "left": 0, "attrs": {} },
+    {
+      "type": "board-ssd1306",
+      "id": "oled",
+      "top": 20,
+      "left": 140,
+      "attrs": { "i2cAddress": "0x3c" }
+    },
+    {
+      "type": "wokwi-dht22",
+      "id": "dht",
+      "top": -110,
+      "left": 130,
+      "attrs": { "temperature": "24.5", "humidity": "55" }
+    },
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "ultrasonic",
+      "top": -120,
+      "left": -80,
+      "attrs": { "distance": "80" }
+    },
+    { "type": "wokwi-buzzer", "id": "bz", "top": 120, "left": 145, "attrs": { "volume": "0.1" } }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "oled:GND", "esp:GND.2", "black", [ "v-15", "h-45" ] ],
+    [ "oled:VCC", "esp:3V3", "red", [ "v-25", "h-155" ] ],
+    [ "oled:SCL", "esp:22", "blue", [ "v-10", "h-45" ] ],
+    [ "oled:SDA", "esp:21", "green", [ "v-5", "h-45" ] ],
+    [ "dht:VCC", "esp:3V3", "red", [ "v20", "h-145" ] ],
+    [ "dht:GND", "esp:GND.2", "black", [ "v30", "h-65" ] ],
+    [ "dht:SDA", "esp:15", "yellow", [ "v150", "h-45" ] ],
+    [ "ultrasonic:VCC", "esp:5V", "red", [ "v280", "h65" ] ],
+    [ "ultrasonic:GND", "esp:GND.1", "black", [ "v230", "h65" ] ],
+    [ "ultrasonic:TRIG", "esp:5", "orange", [ "v40", "h170" ] ],
+    [ "ultrasonic:ECHO", "esp:18", "purple", [ "v30", "h180" ] ],
+    [ "bz:1", "esp:GND.3", "black", [ "v-20", "h-55" ] ],
+    [ "bz:2", "esp:4", "cyan", [ "v-10", "h-55" ] ]
+  ],
+  "dependencies": {}
+}
