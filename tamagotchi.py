@@ -46,7 +46,7 @@ FALAS_POR_ESTADO = {
     "CARINHOSO": ["Gosto de voce!", "Fica comigo!", "Ronron... <3"],
     "NORMAL": [
         "Tudo tranquilo!",
-        "Rede MQTT 100%!",
+        "Tudo bem?",
         "Dia produtivo!"
     ]
 }
