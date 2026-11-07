@@ -39,7 +39,7 @@ float umidade = 50.0;
 long distanciaCm = 80;
 
 String estadoAtual = "NORMAL";
-String falaAtual = "Conectado ao MQTT!";
+String falaAtual = "Tudo bem?";
 bool olhosAbertos = true;
 
 unsigned long ultimoPiscar = 0;
@@ -86,7 +86,7 @@ void desenharCaixaFala(String texto) {
   display.print(texto);
 }
 
-// Sprites do gato 64x38 sem linha horizontal na testa.
+// Sprites do gato 64x38
 const uint8_t PROGMEM gatoNormal[] = {
   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x80, 0x00, 0x00, 0x00, 0x00, 0x00, 0x80,
   0x00, 0xE0, 0x00, 0x00, 0x00, 0x00, 0x03, 0x80, 0x00, 0xB0, 0x00, 0x00, 0x00, 0x00, 0x06, 0x80,
